@@ -49,11 +49,16 @@ public:
     Img operator*(double scalar) const;
     Img operator/(double scalar) const;
     
-    
-    // 要素ごとの平方根を計算
+    // Other arithmetic operations
     Img sqrt() const;
 
-    // 統計
+    // Image Processing
+    // Img trim(unsigned int top, unsigned int right, unsigned int bottom, unsigned int left);
+    // Img clip(double lower_th, double upper_th);
+    // Img clip_lower(double lower_th);
+    // Img clio_higher(double higher_th);
+
+    // statistics
     double min() const;
     double max() const;
     void minmax(double& min, double& max) const;
