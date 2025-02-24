@@ -53,10 +53,10 @@ public:
     Img sqrt() const;
 
     // Image Processing
-    // Img trim(unsigned int top, unsigned int right, unsigned int bottom, unsigned int left);
-    // Img clip(double lower_th, double upper_th);
-    // Img clip_lower(double lower_th);
-    // Img clio_higher(double higher_th);
+    Img trim(unsigned int top, unsigned int right, unsigned int bottom, unsigned int left);
+    Img clip(double lower_th, double upper_th);
+    Img clip_lower(double lower_th);
+    Img clip_higher(double higher_th);
 
     // statistics
     double min() const;
