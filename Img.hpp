@@ -1,13 +1,19 @@
 #ifndef IMG_HPP
 #define IMG_HPP
 
+#include <vector>
+#include <string>
+
 class Img {
 private:
     int height;      // 画像の高さ
     int width;       // 画像の幅
-    double* data;    // 画像データの先頭ポインタ
-    double** rows;   // 各行の先頭ポインタの配列
 
+public:
+    double* data;    // 画像データの先頭ポインタ（public）
+    double** rows;   // 各行の先頭ポインタの配列（public）
+
+private:
     // メモリ管理用の関数
     void releaseMemory();
     void allocateMemory();
@@ -63,7 +69,11 @@ public:
     double max() const;
     void minmax(double& min, double& max) const;
     double var() const;
-
+    
+    // 画像ファイルの入出力
+    static Img read(const std::string& filename);
+    void write(const std::string& filename, int channels, bool use_16bit = false) const;
+    //void write_PNG(const std::string& filename, int channels, bool use_16bit = false) const;
 };
 
 // スカラー値との算術演算子（フリー関数）
